@@ -34,24 +34,6 @@ public class ThreadsActivity extends AppCompatActivity {
         startButton = findViewById(R.id.start_threads_button);
         cancelButton = findViewById(R.id.cancel_threads_button);
 
-        cancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try
-                {
-                    if(!counterThread.isInterrupted())
-                    {
-                        isCancelled = true;
-                    }
-                }
-                catch (NullPointerException e)
-                {
-                    Toast.makeText(v.getContext(), "Must create task before cancelling",
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +76,24 @@ public class ThreadsActivity extends AppCompatActivity {
                 catch (NullPointerException e)
                 {
                     Toast.makeText(v.getContext(), "Must create task before running",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try
+                {
+                    if(!counterThread.isInterrupted())
+                    {
+                        isCancelled = true;
+                    }
+                }
+                catch (NullPointerException e)
+                {
+                    Toast.makeText(v.getContext(), "Must create task before cancelling",
                             Toast.LENGTH_SHORT).show();
                 }
             }
