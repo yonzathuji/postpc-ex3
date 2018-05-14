@@ -77,10 +77,6 @@ public class AsyncTaskActivity extends AppCompatActivity {
         protected String doInBackground(Integer... params) {
             for(; counter <= params[0]; counter++)
             {
-                if(isCancelled())
-                {
-                    return "Cancelled";
-                }
                 try {
                     Thread.sleep(500);
                     publishProgress(counter);

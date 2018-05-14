@@ -17,8 +17,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AsyncTaskActivity" />
-        <activity android:name=".ThreadsActivity" />
+        <activity android:name=".AsyncTaskActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ThreadsActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
